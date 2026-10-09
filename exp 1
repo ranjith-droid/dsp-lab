@@ -1,0 +1,72 @@
+clc;
+clear all;
+close all;
+
+n=-5:5;
+x=(n==0);
+
+subplot(3,3,1);
+stem(n,x,'filled');
+xlabel('n');
+ylabel('Amplitude');
+title('unit impulse');
+grid on;
+
+n=0:10;
+x=n;
+
+subplot(3,3,2);
+stem(n,x,'filled');
+xlabel('n');
+ylabel('Amplitude');
+title('unit ramp');
+grid on;
+
+n=-5:10;
+x=(n>=0);
+
+subplot(3,3,3);
+stem(n,x,'filled');
+xlabel('n');
+ylabel('Amplitude');
+title('unit step');
+grid on;
+
+n=0:10;
+a=0.5;
+x=exp(a*n);
+
+subplot(3,3,4);
+stem(n,x,'filled');
+xlabel('n');
+ylabel('Amplitude');
+title('exponential');
+grid on;
+
+n=0:20;
+sine=sin(0.2*pi*n);
+cose=cos(0.2*pi*n);
+
+subplot(3,3,5);
+stem(n,sine,'filled');
+xlabel('n');
+ylabel('Amplitude');
+title('sine');
+grid on;
+
+subplot(3,3,6);
+stem(n,cose,'filled');
+xlabel('n');
+ylabel('Amplitude');
+title('cose');
+grid on;
+
+n=0:20;
+x=rand(1,21);
+
+subplot(3,3,6);
+stem(n,x,'filled');
+xlabel('n');
+ylabel('Amplitude');
+title('rand');
+grid on;
