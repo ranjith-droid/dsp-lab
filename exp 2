@@ -1,0 +1,32 @@
+clc;
+clear all;
+close all;
+
+x=input('enter the x sequence:');
+h=input('enter the h sequence:');
+y=conv(x,h);
+
+disp('linear convolution');
+disp(y);
+
+figure;
+subplot(3,1,1);
+stem(0:length(x)-1,x,'filled');
+xlabel('length');
+ylabel('amplitude');
+title('input sequences');
+grid on;
+
+subplot(3,1,2);
+stem(0:length(h)-1,h,'filled');
+xlabel('length');
+ylabel('amplitude');
+title('input h sequences');
+grid on;
+
+subplot(3,1,3);
+stem(0:length(y)-1,y,'filled');
+xlabel('length');
+ylabel('amplitude');
+title('output sequences');
+grid on;
