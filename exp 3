@@ -1,0 +1,40 @@
+clc;
+clear all;
+close all;
+
+x=input('enter the x sequences:');
+y=input('enter the y sequences:');
+h=xcorr(x);
+m=xcorr(x,y);
+disp('auto correlation');
+disp(h);
+disp('cross correlation');
+disp(m);
+ figure;
+ subplot(3,2,1);
+ stem(x,'filled');
+ xlabel('n');
+ ylabel('amplitude');
+ title('x input');
+ grid on;
+
+ subplot(3,2,2);
+ stem(y,'filled');
+ xlabel('n');
+ ylabel('amplitude');
+ title('y input');
+ grid on;
+
+ subplot(3,2,3);
+ stem(h,'filled');
+ xlabel('n');
+ ylabel('amplitude');
+ title('auto correlation');
+ grid on;
+
+ subplot(3,2,4);
+ stem(-(length(y)-1):(length(x)-1),m,'filled');
+ xlabel('n');
+ ylabel('amplitude');
+ title('cross correlation');
+ grid on;
