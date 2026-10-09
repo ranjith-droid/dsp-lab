@@ -1,0 +1,28 @@
+clc;
+clear all;
+close all;
+
+x=input('enter sequences:');
+N= length(x);
+X=fft(x);
+magnitude= abs(X);
+phase= angle(X);
+disp('dft X(k)');
+disp(X);
+
+figure;
+subplot(3,1,1);
+stem(0:N-1,magnitude,'filled');
+xlabel('x');
+ylabel('amplitude');
+grid on;
+
+subplot(3,1,2);
+stem(0:N-1,phase,'filled');
+xlabel('n');
+ylabel('amplitude');
+grid on;
+
+yticks([-pi -pi/2 0 pi/2 pi]);
+yticklabels({'-\pi','-\pi/2','0','\pi','\pi/2'});
+ylim([-pi pi]);
